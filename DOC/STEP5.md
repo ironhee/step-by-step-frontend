@@ -1,4 +1,4 @@
-Step3: Use React
+Step5: Use React
 ---
 1. Install React by npm
 
