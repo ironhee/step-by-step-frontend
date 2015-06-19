@@ -3,7 +3,7 @@ Step6: Use Style Guide by ESLint
 1. Install eslint and plugins by npm
 
   ```bash
-  npm install --save-dev eslint babel-eslint eslint-plugin-
+  npm install --save-dev eslint babel-eslint eslint-plugin-react
   ```
 
 2. make eslint configs
