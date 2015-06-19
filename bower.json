@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "description": "step by step learning about frontend",
   "main": "dist/index.js",
-  "author": "ironhee <leechulhee95@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "underscore": "^1.8.3"
-  }
+  "authors": [
+    "ironhee <iron@ediket.com>"
+  ],
+  "license": "MIT"
 }
