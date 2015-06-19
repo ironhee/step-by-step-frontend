@@ -1,7 +1,9 @@
 # Intro
-This tutorial is created to introduce some frontend libraries & frameworks for beginner.
+This tutorial is created to introduce some frontend libraries & frameworks.
 
-Description & code exclude optimization, so if you want more information, look 'Related Links' at bottom of document.
+To avoid confusion, This tutorial is written simplicity and exclude optimization.
+
+if you want more information, look 'Related Links' placed at bottom of document.
 
 # Tutorial
 1. [STEP1: Initialize node package](./DOC/STEP1.md)
