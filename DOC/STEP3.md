@@ -1,4 +1,4 @@
-Step3: Use my package in browser
+Step3: Make my package browser-excutable by Webpack
 ---
 1. Initailize bower package.
 
