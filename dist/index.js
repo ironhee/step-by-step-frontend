@@ -56,14 +56,24 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _ = __webpack_require__(1);
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = helloWorld;
 
-	module.exports = function helloWorld() {
-	  _.times(10, function (index) {
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _underscore = __webpack_require__(1);
+
+	var _underscore2 = _interopRequireDefault(_underscore);
+
+	function helloWorld() {
+	  _underscore2['default'].times(10, function (index) {
 	    console.log('[' + index + '] hello world!');
 	  });
-	};
+	}
 
+	module.exports = exports['default'];
 
 /***/ },
 /* 1 */

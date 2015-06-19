@@ -7,5 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.1.4"
   }
 }
