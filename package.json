@@ -10,6 +10,9 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "babel-loader": "^5.1.4"
+    "babel-eslint": "^3.1.17",
+    "babel-loader": "^5.1.4",
+    "eslint": "^0.23.0",
+    "eslint-plugin-react": "^2.5.2"
   }
 }
