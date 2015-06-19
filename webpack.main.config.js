@@ -5,12 +5,11 @@ var baseConfig = require('./webpack.base.config');
 
 module.exports = _.extend({}, baseConfig, {
   entry: {
-    'app': './src/js/app.es6'
+    'main': './src/js/main.es6'
   },
   output: {
     path: 'dist/',
-    filename: 'index.js',
-    library: 'MyLib',
+    filename: 'main.js',
     libraryTarget: 'umd'
   }
 });
