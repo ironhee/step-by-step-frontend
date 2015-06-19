@@ -6,3 +6,4 @@
 5. [STEP5](./DOC/STEP5.md)
 6. [STEP6](./DOC/STEP6.md)
 7. [STEP7](./DOC/STEP7.md)
+8. [STEP8](./DOC/STEP8.md)
