@@ -42,6 +42,7 @@ Step3: Use my package in browser
     output: {
       path: 'dist/',
       filename: '[name].js',
+      library: 'MyLib',
       libraryTarget: 'umd'
     }
   };
