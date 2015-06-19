@@ -71,8 +71,5 @@ Step7: Manage task by Gulp
 
 Related links
 ---
-+ [airbnb javascript style guide](https://github.com/airbnb/javascript)
-+ [eslint](http://eslint.org/)
-+ [eslint config](http://eslint.org/docs/user-guide/configuring.html)
-+ [atom](https://atom.io/)
-+ [sublimt text](http://www.sublimetext.com/)
++ [gulp](https://github.com/gulpjs/gulp)
++ [webpack api](http://webpack.github.io/docs/node.js-api.html)
