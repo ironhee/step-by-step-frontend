@@ -1,4 +1,4 @@
 import React from 'react';
-import { MyComponent } from './app';
+import { CommentSite } from 'app';
 
-React.render(<MyComponent/>, document.body);
+React.render(<CommentSite/>, document.body);
