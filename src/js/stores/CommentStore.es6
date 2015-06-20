@@ -1,6 +1,7 @@
 import Reflux from 'reflux';
 import CommentActions from 'actions/CommentActions';
 import DBMixin from 'mixins/DBMixin';
+import { Promise } from 'q';
 
 export default Reflux.createStore({
 
