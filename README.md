@@ -14,4 +14,4 @@ if you want more information, look 'Related Links' placed at bottom of document.
 6. [STEP6: Use Style Guide by ESLint](./DOC/STEP6.md)
 7. [STEP7: Manage task by Gulp](./DOC/STEP7.md)
 8. [STEP8: Add Sourcemaps by Webpack](./DOC/STEP8.md)
-9. [Step9: Create Simple app with Reflux & React](./DOC/STEP9.md)
+9. [STEP9: Create Simple app with Reflux & React](./DOC/STEP9.md)
