@@ -7,7 +7,6 @@ Step2: Use another node package
   ```
 
   package.json
-
   ```json
   {
     "name": "step-by-step-frontend",
@@ -25,6 +24,7 @@ Step2: Use another node package
 
 3. update your node module.
 
+  index.js
   ```javascript
   'use strict';
 
@@ -39,6 +39,7 @@ Step2: Use another node package
 
 4. load & run your module.
 
+  test.js
   ```javascript
   'use strict';
 
@@ -52,6 +53,7 @@ Step2: Use another node package
 
 5. create .gitignore
 
+  .gitignore
   ```
   node_modules
   ```

@@ -7,7 +7,6 @@ Step1: Initialize node package
   ```
 
   package.json
-
   ```json
   {
     "name": "step-by-step-frontend",
@@ -21,6 +20,7 @@ Step1: Initialize node package
 
 3. Write your node module.
 
+  index.js
   ```javascript
   'use strict';  
 
@@ -31,7 +31,7 @@ Step1: Initialize node package
 
 4. load & run your module.
 
-
+  test.js
   ```javascript
   'use strict';
 
