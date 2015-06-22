@@ -1,8 +1,9 @@
 Step3: Make my package browser-executable by Webpack
 ---
-1. Initailize bower package.
+1. Install & Initailize bower package.
 
   ```bash
+  npm install -g bower
   bower init  # This command make bower.json
   ```
 
