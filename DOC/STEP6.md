@@ -215,3 +215,5 @@ Related links
 + [eslint config](http://eslint.org/docs/user-guide/configuring.html)
 + [atom](https://atom.io/)
 + [sublimt text](http://www.sublimetext.com/)
+
+__[Next Step](./STEP7.md)__

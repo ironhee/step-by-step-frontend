@@ -63,3 +63,5 @@ Related links
 + [require](https://nodejs.org/api/modules.html)
 + [npm install](https://docs.npmjs.com/cli/install)
 + [dependencies](https://docs.npmjs.com/files/package.json#dependencies)
+
+__[Next Step](./STEP3.md)__

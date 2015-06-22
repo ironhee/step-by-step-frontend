@@ -73,3 +73,5 @@ Related links
 ---
 + [gulp](https://github.com/gulpjs/gulp)
 + [webpack api](http://webpack.github.io/docs/node.js-api.html)
+
+__[Next Step](./STEP8.md)__

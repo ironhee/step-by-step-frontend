@@ -32,3 +32,5 @@ Related links
 ---
 + [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/?redirect_from_locale=ko)
 + [devtool option](http://webpack.github.io/docs/configuration.html#devtool)
+
+__[Next Step](./STEP9.md)__

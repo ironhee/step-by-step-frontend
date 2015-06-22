@@ -152,3 +152,5 @@ Step5: Use React
 Related links
 ---
 + [react](https://github.com/facebook/react)
+
+__[Next Step](./STEP6.md)__

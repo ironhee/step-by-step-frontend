@@ -108,3 +108,5 @@ Related links
 + [bower](https://github.com/bower/bower)
 + [webpack](https://github.com/webpack/webpack)
 + [webpack config](http://webpack.github.io/docs/configuration.html)
+
+__[Next Step](./STEP4.md)__

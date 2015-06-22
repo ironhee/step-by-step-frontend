@@ -77,3 +77,5 @@ Related links
 + [es6features](https://github.com/lukehoban/es6features)
 + [babel](https://github.com/babel/babel)
 + [webpack loader](http://webpack.github.io/docs/using-loaders.html)
+
+__[Next Step](./STEP5.md)__

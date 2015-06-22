@@ -49,3 +49,5 @@ Related links
 + [npm init](https://docs.npmjs.com/cli/init)
 + [package.json](https://docs.npmjs.com/files/package.json)
 + [modules](https://nodejs.org/api/modules.html)
+
+__[Next Step](./STEP2.md)__
