@@ -21,6 +21,10 @@ export default React.createClass({
     return getStoreState();
   },
 
+  componentDidMount() {
+    CommentActions.fetchComments();
+  },
+
   onStoreChange() {
     this.setState(getStoreState());
   },

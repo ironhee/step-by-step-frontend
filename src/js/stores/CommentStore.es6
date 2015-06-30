@@ -5,29 +5,42 @@ import { Promise } from 'q';
 
 export default Reflux.createStore({
 
-  mixins: [new DBMixin()],
+  mixins: [new DBMixin('comments')],
 
   listenables: [CommentActions],
 
+  onFetchComments() {
+    CommentActions.fetchComments.promise(
+      new Promise((resolve, reject) => {
+        this.fetch()
+        .then(comments => resolve(comments))
+        .then(() => this.trigger())
+        .catch(reject);
+      })
+    );
+  },
+
   onCreateComment(content) {
     CommentActions.createComment.promise(
-      new Promise((resolve) => {
-        let comment = this.insert({
+      new Promise((resolve, reject) => {
+        this.insert({
           content,
-          updatedAt: new Date(Date.now())
-        });
-        resolve(comment);
-        this.trigger();
+          updatedAt: new Date().getTime()
+        })
+        .then(comment => resolve(comment))
+        .then(() => this.trigger())
+        .catch(reject);
       })
     );
   },
 
   onRemoveComment(commentID) {
     CommentActions.removeComment.promise(
-      new Promise((resolve) => {
-        let comment = this.removeById(commentID);
-        resolve(comment);
-        this.trigger();
+      new Promise((resolve, reject) => {
+        this.removeById(commentID)
+        .then(comment => resolve(comment))
+        .then(() => this.trigger())
+        .catch(reject);
       })
     );
   }

@@ -15,3 +15,4 @@ if you want more information, look 'Related Links' placed at bottom of document.
 7. [STEP7: Manage task by Gulp](./DOC/STEP7.md)
 8. [STEP8: Add Sourcemaps by Webpack](./DOC/STEP8.md)
 9. [STEP9: Create Simple app with Reflux & React](./DOC/STEP9.md)
+10. [STEP10: Make your app sync with REST API server with json-server & jquery](./DOC/STEP10.md)

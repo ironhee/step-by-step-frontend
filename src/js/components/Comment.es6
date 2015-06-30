@@ -6,7 +6,7 @@ export default React.createClass({
   propTypes: {
     comment: React.PropTypes.shape({
       content: React.PropTypes.string.isRequired,
-      updatedAt: React.PropTypes.object.isRequired
+      updatedAt: React.PropTypes.number.isRequired
     }).isRequired
   },
 
@@ -22,7 +22,7 @@ export default React.createClass({
     return (
       <div>
         { this.props.comment.content } -
-        { this.props.comment.updatedAt.toDateString() }
+        { new Date(this.props.comment.updatedAt).toDateString() }
         <a href="#" onClick={ this.onRemove }>remove</a>
       </div>
     );
