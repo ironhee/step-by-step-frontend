@@ -24,25 +24,1602 @@
 
 <p>This tutorial is created to introduce some frontend libraries &amp; frameworks.</p>
 
-<p>To avoid confusion, This tutorial is written simplicity and exclude optimization.</p>
+<p>To avoid confusion, This tutorial is written simply and exclude optimization.</p>
 
-<p>if you want more information, look 'Related Links' placed at bottom of document.</p>
+<p>if you want more information, look 'Related Links' placed at bottom of each tutorial.</p>
 
-<h1>
-<a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tutorial</h1>
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of Contents</h2>
 
 <ol>
-<li><a href="./DOC/STEP1.md">STEP1: Initialize node package</a></li>
-<li><a href="./DOC/STEP2.md">STEP2: Use another node package</a></li>
-<li><a href="./DOC/STEP3.md">STEP3: Make my package browser-executable by Webpack</a></li>
-<li><a href="./DOC/STEP4.md">STEP4: Use ES6 syntax by Babel</a></li>
-<li><a href="./DOC/STEP5.md">STEP5: Use React</a></li>
-<li><a href="./DOC/STEP6.md">STEP6: Use Style Guide by ESLint</a></li>
-<li><a href="./DOC/STEP7.md">STEP7: Manage task by Gulp</a></li>
-<li><a href="./DOC/STEP8.md">STEP8: Add Sourcemaps by Webpack</a></li>
-<li><a href="./DOC/STEP9.md">STEP9: Create Simple app with Reflux &amp; React</a></li>
-<li><a href="./DOC/STEP10.md">STEP10: Make your app sync with REST API server with json-server &amp; jquery</a></li>
+<li><a href="#step1-initialize-node-package">STEP1: Initialize node package</a></li>
+<li><a href="#step2-use-another-node-package">STEP2: Use another node package</a></li>
+<li><a href="#step3-make-my-package-browser-executable-by-webpack">STEP3: Make my package browser-executable by Webpack</a></li>
+<li><a href="#step4-use-es6-syntax-by-babel">STEP4: Use ES6 syntax by Babel</a></li>
+<li><a href="#step5-use-react">STEP5: Use React</a></li>
+<li><a href="#step6-use-style-guide-by-eslint">STEP6: Use Style Guide by ESLint</a></li>
+<li><a href="#step7-manage-task-by-gulp">STEP7: Manage task by Gulp</a></li>
+<li><a href="#step8-add-sourcemaps-by-webpack">STEP8: Add Sourcemaps by Webpack</a></li>
+<li><a href="#step9-create-simple-app-with-reflux--react">STEP9: Create Simple app with Reflux &amp; React</a></li>
+<li><a href="#step10-make-your-app-sync-with-rest-api-server-with-json-server--jquery">STEP10: Make your app sync with REST API server with json-server &amp; jquery</a></li>
 </ol>
+
+<h2>
+<a id="step1-initialize-node-package" class="anchor" href="#step1-initialize-node-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step1: Initialize node package</h2>
+
+<ol>
+<li>
+<p>Initailize node package.</p>
+
+<div class="highlight highlight-bash"><pre>npm init  <span class="pl-c"># This command make package.json</span></pre></div>
+
+<p>package.json</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step-by-step-frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step by step learning about frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>author<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>ironhee &lt;leechulhee95@gmail.com&gt;<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>license<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>MIT<span class="pl-pds">"</span></span>
+}</pre></div>
+</li>
+<li>
+<p>Write your node module.</p>
+
+<p>index.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;  
+
+<span class="pl-c1">module</span>.<span class="pl-en">exports</span> <span class="pl-k">=</span> <span class="pl-k">function</span> <span class="pl-en">helloWorld</span>() {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>);
+};</pre></div>
+</li>
+<li>
+<p>load &amp; run your module.</p>
+
+<p>test.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> helloWorld <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./<span class="pl-pds">'</span></span>);
+helloWorld();</pre></div>
+
+<div class="highlight highlight-bash"><pre>node <span class="pl-c1">test</span>.js  <span class="pl-c"># hello world!</span></pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="related-links" class="anchor" href="#related-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode </a></li>
+<li><a href="https://docs.npmjs.com/cli/init">npm init</a></li>
+<li><a href="https://docs.npmjs.com/files/package.json">package.json</a></li>
+<li><a href="https://nodejs.org/api/modules.html">modules</a></li>
+</ul>
+
+<h2>
+<a id="step2-use-another-node-package" class="anchor" href="#step2-use-another-node-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step2: Use another node package</h2>
+
+<ol>
+<li>
+<p>Install another node package.</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save underscore</pre></div>
+
+<p>package.json</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step-by-step-frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step by step learning about frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>author<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>ironhee &lt;leechulhee95@gmail.com&gt;<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>license<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>MIT<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>underscore<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^1.8.3<span class="pl-pds">"</span></span>
+  }
+}
+</pre></div>
+</li>
+<li>
+<p>update your node module.</p>
+
+<p>index.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> _ <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>);
+
+<span class="pl-c1">module</span>.<span class="pl-en">exports</span> <span class="pl-k">=</span> <span class="pl-k">function</span> <span class="pl-en">helloWorld</span>() {
+  _.times(<span class="pl-c1">10</span>, <span class="pl-k">function</span> (<span class="pl-smi">index</span>) {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>[<span class="pl-pds">'</span></span> <span class="pl-k">+</span> index <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>] hello world!<span class="pl-pds">'</span></span>);
+  });
+};</pre></div>
+</li>
+<li>
+<p>load &amp; run your module.</p>
+
+<p>test.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> helloWorld <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./<span class="pl-pds">'</span></span>);
+helloWorld();</pre></div>
+
+<div class="highlight highlight-bash"><pre>node <span class="pl-c1">test</span>.js  <span class="pl-c"># [0] hello world! ...</span></pre></div>
+</li>
+<li>
+<p>create .gitignore</p>
+
+<p>.gitignore</p>
+
+<pre><code>node_modules
+</code></pre>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-1" class="anchor" href="#related-links-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://nodejs.org/api/modules.html">require</a></li>
+<li><a href="https://docs.npmjs.com/cli/install">npm install</a></li>
+<li><a href="https://docs.npmjs.com/files/package.json#dependencies">dependencies</a></li>
+</ul>
+
+<h2>
+<a id="step3-make-my-package-browser-executable-by-webpack" class="anchor" href="#step3-make-my-package-browser-executable-by-webpack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step3: Make my package browser-executable by Webpack</h2>
+
+<ol>
+<li>
+<p>Install &amp; Initailize bower package.</p>
+
+<div class="highlight highlight-bash"><pre>npm install -g bower
+bower init  <span class="pl-c"># This command make bower.json</span></pre></div>
+
+<p>bower.json</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step-by-step-frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step by step learning about frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>dist/index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>authors<span class="pl-pds">"</span></span>: [
+    <span class="pl-s"><span class="pl-pds">"</span>ironhee &lt;iron@ediket.com&gt;<span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-s"><span class="pl-pds">"</span>license<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>MIT<span class="pl-pds">"</span></span>
+}</pre></div>
+</li>
+<li>
+<p>Install webpack</p>
+
+<div class="highlight highlight-bash"><pre>npm install -g webpack</pre></div>
+</li>
+<li>
+<p>create webpack config</p>
+
+<p>webpack.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> _ <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>);
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  entry<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>./index.js<span class="pl-pds">'</span></span>
+  },
+  output<span class="pl-k">:</span> {
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dist/<span class="pl-pds">'</span></span>,
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>,
+    library<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MyLib<span class="pl-pds">'</span></span>,
+    libraryTarget<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>umd<span class="pl-pds">'</span></span>
+  }
+};</pre></div>
+</li>
+<li>
+<p>build source code by webpack</p>
+
+<div class="highlight highlight-bash"><pre>webpack  <span class="pl-c"># use webpack.config.js by default</span></pre></div>
+
+<p>if you want to rebuild on file change, use --watch option</p>
+
+<div class="highlight highlight-bash"><pre>webpack --watch  <span class="pl-c"># ctrl-c to exit</span></pre></div>
+</li>
+<li>
+<p>load &amp; run your module.</p>
+
+<p>test.html</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>./dist/index.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt; MyLib(); &lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</li>
+<li>
+<p>change package.json 'main' property</p>
+
+<p>package.json</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step-by-step-frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>step by step learning about frontend<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>dist/index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>author<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>ironhee &lt;leechulhee95@gmail.com&gt;<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>license<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>MIT<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>underscore<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^1.8.3<span class="pl-pds">"</span></span>
+  }
+}</pre></div>
+</li>
+<li>
+<p>load &amp; run your node module.</p>
+
+<p>test.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> helloWorld <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./<span class="pl-pds">'</span></span>);
+helloWorld();</pre></div>
+
+<div class="highlight highlight-bash"><pre>node <span class="pl-c1">test</span>.js  <span class="pl-c"># [0] hello world! ...</span></pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-2" class="anchor" href="#related-links-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/bower/bower">bower</a></li>
+<li><a href="https://github.com/webpack/webpack">webpack</a></li>
+<li><a href="http://webpack.github.io/docs/configuration.html">webpack config</a></li>
+</ul>
+
+<h2>
+<a id="step4-use-es6-syntax-by-babel" class="anchor" href="#step4-use-es6-syntax-by-babel" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step4: Use ES6 syntax by Babel</h2>
+
+<ol>
+<li>
+<p>Install babel-loader by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save-dev babel-loader</pre></div>
+</li>
+<li>
+<p>rename index.js and change content</p>
+
+<div class="highlight highlight-bash"><pre>mv index.js index.es6</pre></div>
+
+<p>index.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-k">function</span> <span class="pl-en">helloWorld</span>() {
+  _.times(<span class="pl-c1">10</span>, (<span class="pl-smi">index</span>)<span class="pl-k"> =&gt;</span> {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">`</span>[<span class="pl-s1"><span class="pl-pse">${</span>index<span class="pl-pse">}</span></span>] hello world!<span class="pl-pds">`</span></span>);
+  });
+}</pre></div>
+</li>
+<li>
+<p>change webpack config</p>
+
+<p>webpack.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> _ <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>);
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  entry<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>./index.es6<span class="pl-pds">'</span></span>
+  },
+  output<span class="pl-k">:</span> {
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dist/<span class="pl-pds">'</span></span>,
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>,
+    library<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MyLib<span class="pl-pds">'</span></span>,
+    libraryTarget<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>umd<span class="pl-pds">'</span></span>
+  },
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      { test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>es6<span class="pl-k">$</span><span class="pl-pds">/</span></span>, loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>babel-loader<span class="pl-pds">'</span></span> }
+    ]
+  }
+};</pre></div>
+</li>
+<li>
+<p>build source code by webpack</p>
+
+<div class="highlight highlight-bash"><pre>webpack</pre></div>
+</li>
+<li>
+<p>test browser-side and node-side</p>
+
+<p>test.html</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>./dist/index.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt; MyLib(); &lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<div class="highlight highlight-bash"><pre>node <span class="pl-c1">test</span>.js  <span class="pl-c"># [0] hello world! ...</span></pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-3" class="anchor" href="#related-links-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/lukehoban/es6features">es6features</a></li>
+<li><a href="https://github.com/babel/babel">babel</a></li>
+<li><a href="http://webpack.github.io/docs/using-loaders.html">webpack loader</a></li>
+</ul>
+
+<h2>
+<a id="step5-use-react" class="anchor" href="#step5-use-react" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step5: Use React</h2>
+
+<ol>
+<li>
+<p>Install React by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save react</pre></div>
+</li>
+<li>
+<p>make some directories</p>
+
+<div class="highlight highlight-bash"><pre>mkdir -p src/js/components</pre></div>
+</li>
+<li>
+<p>create modules and rendering script</p>
+
+<p>src/js/components/MyComponent.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>h1<span class="pl-k">&gt;</span>Hello world<span class="pl-k">!&lt;</span>/h1<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+
+<p>src/js/app.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> MyComponent <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./components/MyComponent<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  MyComponent
+};</pre></div>
+
+<p>src/js/main.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { MyComponent } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./app<span class="pl-pds">'</span></span>;
+
+React.render(<span class="pl-k">&lt;</span>MyComponent/<span class="pl-k">&gt;</span>, <span class="pl-c1">document</span>.<span class="pl-c1">body</span>);</pre></div>
+</li>
+<li>
+<p>remove old files and change webpack config</p>
+
+<div class="highlight highlight-bash"><pre>rm -rf <span class="pl-c1">test</span>.js <span class="pl-c1">test</span>.html index.es6 dist/index.js</pre></div>
+</li>
+<li>
+<p>separate webpack config</p>
+
+<p>webpack.base.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  resolve<span class="pl-k">:</span> {
+    extensions<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.es6<span class="pl-pds">'</span></span>]
+  },
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      { test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>es6<span class="pl-k">$</span><span class="pl-pds">/</span></span>, loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>babel-loader<span class="pl-pds">'</span></span> }
+    ]
+  }
+};</pre></div>
+
+<p>webpack.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> _ <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> baseConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./webpack.base.config<span class="pl-pds">'</span></span>);
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> _.extend({}, baseConfig, {
+  entry<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>./src/js/app.es6<span class="pl-pds">'</span></span>
+  },
+  output<span class="pl-k">:</span> {
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dist/<span class="pl-pds">'</span></span>,
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>index.js<span class="pl-pds">'</span></span>,
+    library<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MyLib<span class="pl-pds">'</span></span>,
+    libraryTarget<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>umd<span class="pl-pds">'</span></span>
+  }
+});</pre></div>
+
+<p>webpack.main.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> _ <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> baseConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./webpack.base.config<span class="pl-pds">'</span></span>);
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> _.extend({}, baseConfig, {
+  entry<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>main<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>./src/js/main.es6<span class="pl-pds">'</span></span>
+  },
+  output<span class="pl-k">:</span> {
+    path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dist/<span class="pl-pds">'</span></span>,
+    filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>main.js<span class="pl-pds">'</span></span>,
+    libraryTarget<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>umd<span class="pl-pds">'</span></span>
+  }
+});</pre></div>
+</li>
+<li>
+<p>build by webpack</p>
+
+<div class="highlight highlight-bash"><pre>webpack  <span class="pl-c"># build library code</span>
+webpack --config webpack.main.config <span class="pl-c"># build rendering code</span></pre></div>
+</li>
+<li>
+<p>check in node and browser</p>
+
+<div class="highlight highlight-bash"><pre>node -e <span class="pl-s"><span class="pl-pds">'</span>console.log(require("./"))<span class="pl-pds">'</span></span>
+<span class="pl-c"># { MyComponent: { [Function] displayName: 'MyComponent' } }</span></pre></div>
+
+<p>demo/index.html</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>../dist/index.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt; <span class="pl-en">console</span><span class="pl-c1">.log</span>(MyLib) &lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</li>
+<li>
+<p>use main.js (rendering logic) in browser</p>
+
+<p>demo/index.html</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>../dist/index.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt; <span class="pl-en">console</span><span class="pl-c1">.log</span>(MyLib) &lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>../dist/main.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-4" class="anchor" href="#related-links-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/facebook/react">react</a></li>
+</ul>
+
+<h2>
+<a id="step6-use-style-guide-by-eslint" class="anchor" href="#step6-use-style-guide-by-eslint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step6: Use Style Guide by ESLint</h2>
+
+<ol>
+<li>
+<p>Install eslint and plugins by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save-dev eslint babel-eslint eslint-plugin-react</pre></div>
+</li>
+<li>
+<p>make eslint configs</p>
+
+<p>.eslintrc</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>env<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>browser<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>node<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>rules<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>strict<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>global<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>no-shadow<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-shadow-restricted-names<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-unused-vars<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>vars<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>local<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>args<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>after-used<span class="pl-pds">"</span></span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>no-use-before-define<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>comma-dangle<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>no-cond-assign<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>no-console<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-debugger<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-alert<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-constant-condition<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-dupe-keys<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-duplicate-case<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-empty<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-ex-assign<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-extra-boolean-cast<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-extra-semi<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-func-assign<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-inner-declarations<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-invalid-regexp<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-irregular-whitespace<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-obj-calls<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-reserved-keys<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-sparse-arrays<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-unreachable<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>use-isnan<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>block-scoped-var<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>consistent-return<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>curly<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>multi-line<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>default-case<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>dot-notation<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>allowKeywords<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>eqeqeq<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>guard-for-in<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-caller<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-else-return<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-eq-null<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-eval<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-extend-native<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-extra-bind<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-fallthrough<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-floating-decimal<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-implied-eval<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-lone-blocks<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-loop-func<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-multi-str<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-native-reassign<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-new<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-new-func<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-new-wrappers<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-octal<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-octal-escape<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-param-reassign<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-proto<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-redeclare<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-return-assign<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-script-url<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-self-compare<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-sequences<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-throw-literal<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-with<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>radix<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>vars-on-top<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>wrap-iife<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>any<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>yoda<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>indent<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-c1">2</span>],
+    <span class="pl-s"><span class="pl-pds">"</span>brace-style<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>1tbs<span class="pl-pds">"</span></span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>allowSingleLine<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>quotes<span class="pl-pds">"</span></span>: [
+      <span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>single<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>avoid-escape<span class="pl-pds">"</span></span>
+    ],
+    <span class="pl-s"><span class="pl-pds">"</span>camelcase<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>properties<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>comma-spacing<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>before<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>after<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>comma-style<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>last<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>eol-last<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>func-names<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>key-spacing<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+        <span class="pl-s"><span class="pl-pds">"</span>beforeColon<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>afterColon<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>new-cap<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>newIsCap<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>no-multiple-empty-lines<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>max<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>no-nested-ternary<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-new-object<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-spaced-func<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-trailing-spaces<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-wrap-func<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>no-underscore-dangle<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>one-var<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>padded-blocks<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>semi<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>always<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>semi-spacing<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>before<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>after<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+    }],
+    <span class="pl-s"><span class="pl-pds">"</span>space-after-keywords<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>space-before-blocks<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>space-before-function-paren<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>space-infix-ops<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>space-return-throw-case<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>spaced-line-comment<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+  }
+}</pre></div>
+
+<p>src/js/.estlinrc</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>parser<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>babel-eslint<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>plugins<span class="pl-pds">"</span></span>: [
+    <span class="pl-s"><span class="pl-pds">"</span>react<span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-s"><span class="pl-pds">"</span>ecmaFeatures<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>arrowFunctions<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>blockBindings<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>classes<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>defaultParams<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>destructuring<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>forOf<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>generators<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>modules<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>objectLiteralComputedProperties<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>objectLiteralDuplicateProperties<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>objectLiteralShorthandMethods<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>objectLiteralShorthandProperties<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>spread<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>superInFunctions<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>templateStrings<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>jsx<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>rules<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>strict<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>never<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>no-var<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/display-name<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-boolean-value<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-quotes<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>double<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-no-undef<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-sort-props<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-sort-prop-types<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-uses-react<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/jsx-uses-vars<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/no-did-mount-set-state<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">"</span>allow-in-func<span class="pl-pds">"</span></span>],
+    <span class="pl-s"><span class="pl-pds">"</span>react/no-did-update-set-state<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/no-multi-comp<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/no-unknown-property<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/prop-types<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/react-in-jsx-scope<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/self-closing-comp<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/wrap-multilines<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>react/sort-comp<span class="pl-pds">"</span></span>: [<span class="pl-c1">2</span>, {
+      <span class="pl-s"><span class="pl-pds">"</span>order<span class="pl-pds">"</span></span>: [
+        <span class="pl-s"><span class="pl-pds">"</span>displayName<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>mixins<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>statics<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>propTypes<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>getDefaultProps<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>getInitialState<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>componentWillMount<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>componentDidMount<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>componentWillReceiveProps<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>shouldComponentUpdate<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>componentWillUpdate<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>componentWillUnmount<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>/^on.+$/<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>/^get.+$/<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>/^render.+$/<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>render<span class="pl-pds">"</span></span>
+      ]
+    }]
+  }
+}</pre></div>
+</li>
+<li>
+<p>install editor plugin</p>
+
+<ul>
+<li>sublime text: Install SublimeLinter &amp; SublimeLinter-eslint</li>
+<li>atom: Install linter &amp; linter-eslint</li>
+</ul>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-5" class="anchor" href="#related-links-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/airbnb/javascript">airbnb javascript style guide</a></li>
+<li><a href="http://eslint.org/">eslint</a></li>
+<li><a href="http://eslint.org/docs/user-guide/configuring.html">eslint config</a></li>
+<li><a href="https://atom.io/">atom</a></li>
+<li><a href="http://www.sublimetext.com/">sublimt text</a></li>
+</ul>
+
+<h2>
+<a id="step7-manage-task-by-gulp" class="anchor" href="#step7-manage-task-by-gulp" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step7: Manage task by Gulp</h2>
+
+<ol>
+<li>
+<p>Install gulp by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install -g gulp
+npm install --save-dev gulp</pre></div>
+</li>
+<li>
+<p>Install webpack and plugin by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save-dev webpack
+npm install --save-dev webpack-gulp-logger</pre></div>
+</li>
+<li>
+<p>create gulp config file (gulpfile.js)</p>
+
+<p>gulpfile.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> webpack <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> webpackLogger <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-gulp-logger<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> libWebpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./webpack.config<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> mainWebpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./webpack.main.config<span class="pl-pds">'</span></span>);
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>default<span class="pl-pds">'</span></span>, [
+  <span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>
+]);
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>, [
+  <span class="pl-s"><span class="pl-pds">'</span>watch-lib<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>watch-main<span class="pl-pds">'</span></span>
+]);
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>, [
+  <span class="pl-s"><span class="pl-pds">'</span>build-lib<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>build-main<span class="pl-pds">'</span></span>
+]);
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>watch-lib<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  webpack(libWebpackConfig).<span class="pl-c1">watch</span>({}, webpackLogger());
+});
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>watch-main<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  webpack(mainWebpackConfig).<span class="pl-c1">watch</span>({}, webpackLogger());
+});
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>build-lib<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">callback</span>) {
+  webpack(libWebpackConfig).run(webpackLogger(callback));
+});
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>build-main<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">callback</span>) {
+  webpack(mainWebpackConfig).run(webpackLogger(callback));
+});</pre></div>
+</li>
+<li>
+<p>run gulp task</p>
+
+<p>for build</p>
+
+<div class="highlight highlight-bash"><pre>gulp build</pre></div>
+
+<p>for watch</p>
+
+<div class="highlight highlight-bash"><pre>gulp watch</pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-6" class="anchor" href="#related-links-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/gulpjs/gulp">gulp</a></li>
+<li><a href="http://webpack.github.io/docs/node.js-api.html">webpack api</a></li>
+</ul>
+
+<h2>
+<a id="step8-add-sourcemaps-by-webpack" class="anchor" href="#step8-add-sourcemaps-by-webpack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step8: Add Sourcemaps by Webpack</h2>
+
+<ol>
+<li>
+<p>set devtool property in webpack config</p>
+
+<p>webpack.base.config.js</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  devtool<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>eval-source-map<span class="pl-pds">'</span></span>,
+  resolve<span class="pl-k">:</span> {
+    extensions<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.es6<span class="pl-pds">'</span></span>]
+  },
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      { test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>es6<span class="pl-k">$</span><span class="pl-pds">/</span></span>, loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>babel-loader<span class="pl-pds">'</span></span> }
+    ]
+  }
+};</pre></div>
+</li>
+<li>
+<p>build by gulp</p>
+
+<div class="highlight highlight-bash"><pre>gulp build</pre></div>
+
+<p>now you can distinguish source code.</p>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-7" class="anchor" href="#related-links-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/?redirect_from_locale=ko">sourcemap</a></li>
+<li><a href="http://webpack.github.io/docs/configuration.html#devtool">devtool option</a></li>
+</ul>
+
+<h2>
+<a id="step9-create-simple-app-with-reflux--react" class="anchor" href="#step9-create-simple-app-with-reflux--react" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step9: Create Simple app with Reflux &amp; React</h2>
+
+<ol>
+<li>
+<p>add resolve.modulesDirectories option to webpack config for convenience</p>
+
+<p>webpack.base.config</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  devtool<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>eval-source-map<span class="pl-pds">'</span></span>,
+  resolve<span class="pl-k">:</span> {
+    modulesDirectories<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/js/<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>node_modules<span class="pl-pds">'</span></span>],
+    extensions<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.es6<span class="pl-pds">'</span></span>]
+  },
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      { test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>es6<span class="pl-k">$</span><span class="pl-pds">/</span></span>, loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>babel-loader<span class="pl-pds">'</span></span> }
+    ]
+  }
+};</pre></div>
+</li>
+<li>
+<p>create Commment.es6 and CommentSite.es6</p>
+
+<p>src/js/components/Comment.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  propTypes<span class="pl-k">:</span> {
+    comment<span class="pl-k">:</span> React.PropTypes.<span class="pl-c1">shape</span>({
+      content<span class="pl-k">:</span> React.PropTypes.string.isRequired,
+      updatedAt<span class="pl-k">:</span> React.PropTypes.<span class="pl-c1">object</span>.isRequired
+    }).isRequired
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        { <span class="pl-v">this</span>.props.comment.<span class="pl-c1">content</span> } <span class="pl-k">-</span>
+        { <span class="pl-v">this</span>.props.comment.updatedAt.toDateString() }
+        <span class="pl-k">&lt;</span>a href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>remove<span class="pl-k">&lt;</span>/a<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+
+<p>src/js/components/CommentSite.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Comment <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/Comment<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  <span class="pl-en">getInitialState</span>() {
+    <span class="pl-k">return</span> {
+      comments<span class="pl-k">:</span> [{
+        id<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+        content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>this is comment1!<span class="pl-pds">'</span></span>,
+        updatedAt<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>(<span class="pl-c1">Date</span>.now())
+      }, {
+        id<span class="pl-k">:</span> <span class="pl-c1">2</span>,
+        content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>this is comment2!<span class="pl-pds">'</span></span>,
+        updatedAt<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>(<span class="pl-c1">Date</span>.now())
+      }]
+    };
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>h3<span class="pl-k">&gt;</span>Comments<span class="pl-k">&lt;</span>/h3<span class="pl-k">&gt;</span>
+        { _.map(<span class="pl-v">this</span>.state.comments, comment <span class="pl-k">=&gt;</span> (
+          <span class="pl-k">&lt;</span>Comment comment<span class="pl-k">=</span>{ comment } key<span class="pl-k">=</span>{ comment.<span class="pl-c1">id</span> } /<span class="pl-k">&gt;</span>
+        )) }
+        <span class="pl-k">&lt;</span>form<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>textarea ref<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>newComment<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/textarea<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>button<span class="pl-k">&gt;</span>Comment<span class="pl-k">!&lt;</span>/button<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>/form<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+</li>
+<li>
+<p>add CommentSite to app.es6</p>
+
+<p>src/js/app.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> MyComponent <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/MyComponent<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentSite <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/CommentSite<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  MyComponent,
+  CommentSite
+};</pre></div>
+</li>
+<li>
+<p>change main.es6</p>
+
+<p>main.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { CommentSite } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>;
+
+React.render(<span class="pl-k">&lt;</span>CommentSite/<span class="pl-k">&gt;</span>, <span class="pl-c1">document</span>.<span class="pl-c1">body</span>);</pre></div>
+</li>
+<li><p>open demo.index.html in browser and check components are correctly rendered</p></li>
+<li>
+<p>install reflux, q, underscore-db by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install --save reflux q@~1.0 underscore-db</pre></div>
+</li>
+<li>
+<p>add node.fs option to webpack config</p>
+
+<p>webpack.base.config</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  devtool<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>eval-source-map<span class="pl-pds">'</span></span>,
+  node<span class="pl-k">:</span> {
+    fs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>empty<span class="pl-pds">'</span></span>
+  },
+  resolve<span class="pl-k">:</span> {
+    modulesDirectories<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/js/<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>node_modules<span class="pl-pds">'</span></span>],
+    extensions<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.es6<span class="pl-pds">'</span></span>]
+  },
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      { test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>es6<span class="pl-k">$</span><span class="pl-pds">/</span></span>, loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>babel-loader<span class="pl-pds">'</span></span> }
+    ]
+  }
+};</pre></div>
+</li>
+<li>
+<p>define comment actions</p>
+
+<p>src/js/actions/CommentActions.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> Reflux.createActions({
+
+  createComment<span class="pl-k">:</span> {
+    asyncResult<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  },
+
+  removeComment<span class="pl-k">:</span> {
+    asyncResult<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  }
+
+});</pre></div>
+</li>
+<li>
+<p>set reflux promise factory to Q.Promise</p>
+
+<p>src/js/app.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Q <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+Reflux.setPromiseFactory(Q.Promise);
+
+<span class="pl-k">import</span> MyComponent <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/MyComponent<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentSite <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/CommentSite<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  MyComponent,
+  CommentSite
+};</pre></div>
+</li>
+<li>
+<p>create comment store</p>
+
+<p>src/js/mixins/DBMixin.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> underscoreDB <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore-db<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+
+_.mixin(underscoreDB);
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-k">function</span> <span class="pl-en">DBMixin</span>() {
+  <span class="pl-k">let</span> result <span class="pl-k">=</span> {
+    db<span class="pl-k">:</span> []
+  };
+
+  _.extend(result, _(result.db));
+  <span class="pl-k">return</span> result;
+}</pre></div>
+
+<p>src/js/stores/CommentStore.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> DBMixin <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mixins/DBMixin<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { Promise } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> Reflux.createStore({
+
+  mixins<span class="pl-k">:</span> [<span class="pl-k">new</span> <span class="pl-en">DBMixin</span>()],
+
+  listenables<span class="pl-k">:</span> [CommentActions],
+
+  <span class="pl-en">onCreateComment</span>(<span class="pl-smi">content</span>) {
+    CommentActions.createComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-k">let</span> comment <span class="pl-k">=</span> <span class="pl-v">this</span>.insert({
+          content,
+          updatedAt<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>(<span class="pl-c1">Date</span>.now())
+        });
+        resolve(comment);
+        <span class="pl-v">this</span>.trigger();
+      })
+    );
+  },
+
+  <span class="pl-en">onRemoveComment</span>(<span class="pl-smi">commentID</span>) {
+    CommentActions.removeComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-k">let</span> comment <span class="pl-k">=</span> <span class="pl-v">this</span>.removeById(commentID);
+        resolve(comment);
+        <span class="pl-v">this</span>.trigger();
+      })
+    );
+  }
+
+});</pre></div>
+</li>
+<li>
+<p>make Commment.es6 and CommentSite.es6 use store &amp; actions</p>
+
+<p>src/js/components/Comment.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  propTypes<span class="pl-k">:</span> {
+    comment<span class="pl-k">:</span> React.PropTypes.<span class="pl-c1">shape</span>({
+      content<span class="pl-k">:</span> React.PropTypes.string.isRequired,
+      updatedAt<span class="pl-k">:</span> React.PropTypes.<span class="pl-c1">object</span>.isRequired
+    }).isRequired
+  },
+
+  <span class="pl-en">onRemove</span>() {
+    CommentActions.removeComment(<span class="pl-v">this</span>.props.comment.<span class="pl-c1">id</span>)
+    .then(()<span class="pl-k"> =&gt;</span> {
+      <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>removed!<span class="pl-pds">'</span></span>);
+    });
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        { <span class="pl-v">this</span>.props.comment.<span class="pl-c1">content</span> } <span class="pl-k">-</span>
+        { <span class="pl-v">this</span>.props.comment.updatedAt.toDateString() }
+        <span class="pl-k">&lt;</span>a href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> onClick<span class="pl-k">=</span>{ <span class="pl-v">this</span>.onRemove }<span class="pl-k">&gt;</span>remove<span class="pl-k">&lt;</span>/a<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+
+<p>src/js/components/CommentSite.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Comment <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/Comment<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentStore <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>stores/CommentStore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">function</span> <span class="pl-en">getStoreState</span>() {
+  <span class="pl-k">return</span> {
+    comments<span class="pl-k">:</span> CommentStore.<span class="pl-c1">value</span>()
+  };
+}
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  mixins<span class="pl-k">:</span> [
+    Reflux.listenTo(CommentStore, <span class="pl-s"><span class="pl-pds">'</span>onStoreChange<span class="pl-pds">'</span></span>)
+  ],
+
+  <span class="pl-en">getInitialState</span>() {
+    <span class="pl-k">return</span> getStoreState();
+  },
+
+  <span class="pl-en">onStoreChange</span>() {
+    <span class="pl-v">this</span>.setState(getStoreState());
+  },
+
+  <span class="pl-en">onCreateComment</span>() {
+    <span class="pl-k">let</span> content <span class="pl-k">=</span> React.findDOMNode(<span class="pl-v">this</span>.refs.newComment).<span class="pl-c1">value</span>;
+    CommentActions.<span class="pl-c1">createComment</span>(content)
+    .then(()<span class="pl-k"> =&gt;</span> {
+      <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>created!<span class="pl-pds">'</span></span>);
+    });
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>h3<span class="pl-k">&gt;</span>Comments<span class="pl-k">&lt;</span>/h3<span class="pl-k">&gt;</span>
+        { _.map(<span class="pl-v">this</span>.state.comments, comment <span class="pl-k">=&gt;</span> (
+          <span class="pl-k">&lt;</span>Comment comment<span class="pl-k">=</span>{ comment } key<span class="pl-k">=</span>{ comment.<span class="pl-c1">id</span> } /<span class="pl-k">&gt;</span>
+        )) }
+        <span class="pl-k">&lt;</span>form <span class="pl-c1">onSubmit</span><span class="pl-k">=</span>{ <span class="pl-v">this</span>.onCreateComment }<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>textarea ref<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>newComment<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/textarea<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>button<span class="pl-k">&gt;</span>Comment<span class="pl-k">!&lt;</span>/button<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>/form<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+</li>
+<li><p>open demo.index.html in browser and check components are correctly operated</p></li>
+</ol>
+
+<h3>
+<a id="related-links-8" class="anchor" href="#related-links-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories">modulesDirectories option</a></li>
+<li><a href="http://www.html5rocks.com/ko/tutorials/es6/promises/">promise</a></li>
+<li><a href="http://documentup.com/kriskowal/q/">q</a></li>
+<li><a href="https://github.com/facebook/flux">flux</a></li>
+<li><a href="https://github.com/spoike/refluxjs">reflux</a></li>
+<li><a href="https://github.com/facebook/react">react</a></li>
+<li><a href="https://github.com/typicode/underscore-db">underscore-db</a></li>
+<li><a href="https://github.com/spoike/refluxjs-todo">reflux-todo</a></li>
+<li><a href="https://github.com/webpack/jade-loader/issues/8">Cannot resolve module 'fs'</a></li>
+</ul>
+
+<h2>
+<a id="step10-make-your-app-sync-with-rest-api-server-with-json-server--jquery" class="anchor" href="#step10-make-your-app-sync-with-rest-api-server-with-json-server--jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP10: Make your app sync with REST API server with json-server &amp; jquery</h2>
+
+<ol>
+<li>
+<p>Install json-server globally by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install -g json-server</pre></div>
+</li>
+<li>
+<p>Create directory for json-server</p>
+
+<div class="highlight highlight-bash"><pre>mkdir public</pre></div>
+</li>
+<li>
+<p>Move demo/index.html to public/index.html</p>
+
+<div class="highlight highlight-bash"><pre>mv demo/index.html public
+rm -rf demo</pre></div>
+</li>
+<li>
+<p>Change content of public/index.html</p>
+
+<p>public/index.html</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>/static/main.js<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</li>
+<li>
+<p>Make symbolic link of static files.</p>
+
+<pre><code>ln -s ../dist/ public/static
+</code></pre>
+</li>
+<li>
+<p>create db.json</p>
+
+<p>db.json</p>
+
+<div class="highlight highlight-json"><pre>{}</pre></div>
+</li>
+<li>
+<p>Run json-server</p>
+
+<div class="highlight highlight-bash"><pre>json-server db.json
+<span class="pl-c">#  {^_^} Hi!</span>
+<span class="pl-c">#  </span>
+<span class="pl-c"># Loading database from db.json</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#</span>
+<span class="pl-c"># You can now go to http://localhost:3000</span>
+<span class="pl-c">#</span>
+<span class="pl-c"># Enter s at any time to create a snapshot # of the db</span></pre></div>
+</li>
+<li><p>Open http://localhost:3000 in browser. and check your app is correctly operated.</p></li>
+<li>
+<p>Install jquery, url-join by npm</p>
+
+<div class="highlight highlight-bash"><pre>npm install -S jquery url-join</pre></div>
+</li>
+<li>
+<p>Make CommentStore use Ajax Request.</p>
+
+<p>src/js/mixins/DBMixin.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> underscoreDB <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore-db<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> $ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> urlJoin <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>url-join<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { Promise } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+
+_.mixin(underscoreDB);
+
+<span class="pl-k">function</span> <span class="pl-en">ajaxRequest</span>(<span class="pl-smi">options</span>) {
+  <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+    $.ajax(options)
+      .then(resolve)
+      .fail(reject);
+  });
+}
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-k">function</span> <span class="pl-en">DBMixin</span>(<span class="pl-smi">type</span>) {
+  <span class="pl-k">let</span> result <span class="pl-k">=</span> {
+    db<span class="pl-k">:</span> []
+  };
+  <span class="pl-k">let</span> methods <span class="pl-k">=</span> _(result.db);
+  _.extend(result, methods);
+  _.extend(result, {
+    <span class="pl-en">insert</span>(<span class="pl-smi">attributes</span>) {
+      <span class="pl-k">return</span> ajaxRequest({
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>POST<span class="pl-pds">'</span></span>,
+        url<span class="pl-k">:</span> urlJoin(type),
+        data<span class="pl-k">:</span> attributes
+      })
+      .then(response <span class="pl-k">=&gt;</span> {
+        <span class="pl-k">return</span> response;
+      })
+      .then(response <span class="pl-k">=&gt;</span> methods.insert(response));
+    },
+    <span class="pl-en">removeById</span>(<span class="pl-smi">id</span>) {
+      <span class="pl-k">return</span> ajaxRequest({
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>DELETE<span class="pl-pds">'</span></span>,
+        url<span class="pl-k">:</span> urlJoin(type, id)
+      })
+      .then(()<span class="pl-k"> =&gt;</span> methods.removeById(id));
+    }
+  });
+
+  <span class="pl-k">return</span> result;
+}</pre></div>
+
+<p>src/js/stores/CommentStore.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> DBMixin <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mixins/DBMixin<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { Promise } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> Reflux.createStore({
+
+  mixins<span class="pl-k">:</span> [<span class="pl-k">new</span> <span class="pl-en">DBMixin</span>(<span class="pl-s"><span class="pl-pds">'</span>comments<span class="pl-pds">'</span></span>)],
+
+  listenables<span class="pl-k">:</span> [CommentActions],
+
+  <span class="pl-en">onCreateComment</span>(<span class="pl-smi">content</span>) {
+    CommentActions.createComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-v">this</span>.insert({
+          content,
+          updatedAt<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>().<span class="pl-c1">getTime</span>()
+        })
+        .then(comment <span class="pl-k">=&gt;</span> resolve(comment))
+        .then(()<span class="pl-k"> =&gt;</span> <span class="pl-v">this</span>.trigger())
+        .catch(reject);
+      })
+    );
+  },
+
+  <span class="pl-en">onRemoveComment</span>(<span class="pl-smi">commentID</span>) {
+    CommentActions.removeComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-v">this</span>.removeById(commentID)
+        .then(comment <span class="pl-k">=&gt;</span> resolve(comment))
+        .then(()<span class="pl-k"> =&gt;</span> <span class="pl-v">this</span>.trigger())
+        .catch(reject);
+      })
+    );
+  }
+
+});</pre></div>
+
+<p>Warning: comment.updatedAt field's type is change.</p>
+</li>
+<li>
+<p>Apply comment.updatedAt field's type change.</p>
+
+<p>src/js/components/Comment.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  propTypes<span class="pl-k">:</span> {
+    comment<span class="pl-k">:</span> React.PropTypes.<span class="pl-c1">shape</span>({
+      content<span class="pl-k">:</span> React.PropTypes.string.isRequired,
+      updatedAt<span class="pl-k">:</span> React.PropTypes.number.isRequired
+    }).isRequired
+  },
+
+  <span class="pl-en">onRemove</span>() {
+    CommentActions.removeComment(<span class="pl-v">this</span>.props.comment.<span class="pl-c1">id</span>)
+    .then(()<span class="pl-k"> =&gt;</span> {
+      <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>removed!<span class="pl-pds">'</span></span>);
+    });
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        { <span class="pl-v">this</span>.props.comment.<span class="pl-c1">content</span> } <span class="pl-k">-</span>
+        { <span class="pl-k">new</span> <span class="pl-en">Date</span>(<span class="pl-v">this</span>.props.comment.updatedAt).toDateString() }
+        <span class="pl-k">&lt;</span>a href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> onClick<span class="pl-k">=</span>{ <span class="pl-v">this</span>.onRemove }<span class="pl-k">&gt;</span>remove<span class="pl-k">&lt;</span>/a<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+</li>
+<li><p>Open http://localhost:3000 in browser. and check your app make ajax request correctly.</p></li>
+<li>
+<p>add fetchComments action to CommentActions</p>
+
+<p>src/js/actions/CommentActions.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> Reflux.createActions({
+
+  fetchComments<span class="pl-k">:</span> {
+    asyncResult<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  },
+
+  createComment<span class="pl-k">:</span> {
+    asyncResult<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  },
+
+  removeComment<span class="pl-k">:</span> {
+    asyncResult<span class="pl-k">:</span> <span class="pl-c1">true</span>
+  }
+
+});</pre></div>
+</li>
+<li>
+<p>make CommentSite trigger fetchComment action after rendered. (componentDidMount)</p>
+
+<p>src/js/components/CommentSite.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> Comment <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>components/Comment<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentStore <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>stores/CommentStore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">function</span> <span class="pl-en">getStoreState</span>() {
+  <span class="pl-k">return</span> {
+    comments<span class="pl-k">:</span> CommentStore.<span class="pl-c1">value</span>()
+  };
+}
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> React.createClass({
+
+  mixins<span class="pl-k">:</span> [
+    Reflux.listenTo(CommentStore, <span class="pl-s"><span class="pl-pds">'</span>onStoreChange<span class="pl-pds">'</span></span>)
+  ],
+
+  <span class="pl-en">getInitialState</span>() {
+    <span class="pl-k">return</span> getStoreState();
+  },
+
+  <span class="pl-en">componentDidMount</span>() {
+    CommentActions.fetchComments();
+  },
+
+  <span class="pl-en">onStoreChange</span>() {
+    <span class="pl-v">this</span>.setState(getStoreState());
+  },
+
+  <span class="pl-en">onCreateComment</span>() {
+    <span class="pl-k">let</span> content <span class="pl-k">=</span> React.findDOMNode(<span class="pl-v">this</span>.refs.newComment).<span class="pl-c1">value</span>;
+    CommentActions.<span class="pl-c1">createComment</span>(content)
+    .then(()<span class="pl-k"> =&gt;</span> {
+      <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>created!<span class="pl-pds">'</span></span>);
+    });
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  },
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>h3<span class="pl-k">&gt;</span>Comments<span class="pl-k">&lt;</span>/h3<span class="pl-k">&gt;</span>
+        { _.map(<span class="pl-v">this</span>.state.comments, comment <span class="pl-k">=&gt;</span> (
+          <span class="pl-k">&lt;</span>Comment comment<span class="pl-k">=</span>{ comment } key<span class="pl-k">=</span>{ comment.<span class="pl-c1">id</span> } /<span class="pl-k">&gt;</span>
+        )) }
+        <span class="pl-k">&lt;</span>form <span class="pl-c1">onSubmit</span><span class="pl-k">=</span>{ <span class="pl-v">this</span>.onCreateComment }<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>textarea ref<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>newComment<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/textarea<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>button<span class="pl-k">&gt;</span>Comment<span class="pl-k">!&lt;</span>/button<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>/form<span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
+    );
+  }
+
+});</pre></div>
+</li>
+<li>
+<p>implement fetch method</p>
+
+<p>src/js/mixins/DBMixin.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> underscoreDB <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore-db<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> _ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underscore<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> $ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> urlJoin <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>url-join<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { Promise } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+
+_.mixin(underscoreDB);
+
+<span class="pl-k">function</span> <span class="pl-en">ajaxRequest</span>(<span class="pl-smi">options</span>) {
+  <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+    $.ajax(options)
+      .then(resolve)
+      .fail(reject);
+  });
+}
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-k">function</span> <span class="pl-en">DBMixin</span>(<span class="pl-smi">type</span>) {
+  <span class="pl-k">let</span> result <span class="pl-k">=</span> {
+    db<span class="pl-k">:</span> []
+  };
+  <span class="pl-k">let</span> methods <span class="pl-k">=</span> _(result.db);
+  _.extend(result, methods);
+  _.extend(result, {
+    <span class="pl-en">insert</span>(<span class="pl-smi">attributes</span>) {
+      <span class="pl-k">return</span> ajaxRequest({
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>POST<span class="pl-pds">'</span></span>,
+        url<span class="pl-k">:</span> urlJoin(type),
+        data<span class="pl-k">:</span> attributes
+      })
+      .then(response <span class="pl-k">=&gt;</span> {
+        <span class="pl-k">return</span> response;
+      })
+      .then(response <span class="pl-k">=&gt;</span> methods.insert(response));
+    },
+    <span class="pl-en">removeById</span>(<span class="pl-smi">id</span>) {
+      <span class="pl-k">return</span> ajaxRequest({
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>DELETE<span class="pl-pds">'</span></span>,
+        url<span class="pl-k">:</span> urlJoin(type, id)
+      })
+      .then(()<span class="pl-k"> =&gt;</span> methods.removeById(id));
+    },
+    <span class="pl-en">fetch</span>(<span class="pl-smi">id</span>) {
+      <span class="pl-k">return</span> ajaxRequest({
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>GET<span class="pl-pds">'</span></span>,
+        url<span class="pl-k">:</span> urlJoin(type, id)
+      })
+      .then(response <span class="pl-k">=&gt;</span> _.isArray(response) <span class="pl-k">?</span>
+        _.map(response, _response <span class="pl-k">=&gt;</span> methods.insert(_response)) <span class="pl-k">:</span>
+        methods.insert(response)
+      );
+    }
+  });
+
+  <span class="pl-k">return</span> result;
+}</pre></div>
+
+<p>src/js/stores/CommentStore.es6</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">import</span> Reflux <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>reflux<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> CommentActions <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>actions/CommentActions<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> DBMixin <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mixins/DBMixin<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { Promise } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> Reflux.createStore({
+
+  mixins<span class="pl-k">:</span> [<span class="pl-k">new</span> <span class="pl-en">DBMixin</span>(<span class="pl-s"><span class="pl-pds">'</span>comments<span class="pl-pds">'</span></span>)],
+
+  listenables<span class="pl-k">:</span> [CommentActions],
+
+  <span class="pl-en">onFetchComments</span>() {
+    CommentActions.fetchComments.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-v">this</span>.fetch()
+        .then(comments <span class="pl-k">=&gt;</span> resolve(comments))
+        .then(()<span class="pl-k"> =&gt;</span> <span class="pl-v">this</span>.trigger())
+        .catch(reject);
+      })
+    );
+  },
+
+  <span class="pl-en">onCreateComment</span>(<span class="pl-smi">content</span>) {
+    CommentActions.createComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-v">this</span>.insert({
+          content,
+          updatedAt<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Date</span>().<span class="pl-c1">getTime</span>()
+        })
+        .then(comment <span class="pl-k">=&gt;</span> resolve(comment))
+        .then(()<span class="pl-k"> =&gt;</span> <span class="pl-v">this</span>.trigger())
+        .catch(reject);
+      })
+    );
+  },
+
+  <span class="pl-en">onRemoveComment</span>(<span class="pl-smi">commentID</span>) {
+    CommentActions.removeComment.promise(
+      <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>)<span class="pl-k"> =&gt;</span> {
+        <span class="pl-v">this</span>.removeById(commentID)
+        .then(comment <span class="pl-k">=&gt;</span> resolve(comment))
+        .then(()<span class="pl-k"> =&gt;</span> <span class="pl-v">this</span>.trigger())
+        .catch(reject);
+      })
+    );
+  }
+
+});</pre></div>
+</li>
+<li><p>Open http://localhost:3000 in browser. and check your app make get request after initial rendering and your comments is correctly rendered.</p></li>
+<li>
+<p>add db.json to .gitignore</p>
+
+<p>.gitignore</p>
+
+<pre><code>node_modules
+db.json
+</code></pre>
+</li>
+</ol>
+
+<h3>
+<a id="related-links-9" class="anchor" href="#related-links-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related links</h3>
+
+<ul>
+<li><a href="https://github.com/jfromaniello/url-join">url-join</a></li>
+<li><a href="https://github.com/typicode/json-server">json-server</a></li>
+<li><a href="https://github.com/jquery/jquery">jquery</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/AJAX">ajax</a></li>
+<li><a href="http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming">what-exactly-is-restful-programming</a></li>
+<li><a href="http://tools.ietf.org/html/rfc2616#section-9">RFC2616 - Method</a></li>
+<li><a href="http://jsonapi.org/">jsonapi</a></li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ironhee/step-by-step-frontend">Step-by-step-frontend</a> is maintained by <a href="https://github.com/ironhee">ironhee</a>.</span>
