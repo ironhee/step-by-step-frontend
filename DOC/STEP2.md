@@ -1,5 +1,5 @@
-Step2: Use another node package
----
+## Step2: Use another node package
+
 1. Install another node package.
 
   ```bash
@@ -58,10 +58,8 @@ Step2: Use another node package
   node_modules
   ```
 
-Related links
----
+### Related links
+
 + [require](https://nodejs.org/api/modules.html)
 + [npm install](https://docs.npmjs.com/cli/install)
 + [dependencies](https://docs.npmjs.com/files/package.json#dependencies)
-
-__[Next Step](./STEP3.md)__

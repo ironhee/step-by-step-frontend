@@ -1,5 +1,5 @@
-Step8: Add Sourcemaps by Webpack
----
+## Step8: Add Sourcemaps by Webpack
+
 1. set devtool property in webpack config
 
   webpack.base.config.js
@@ -28,9 +28,7 @@ Step8: Add Sourcemaps by Webpack
   now you can distinguish source code.
 
 
-Related links
----
+### Related links
+
 + [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/?redirect_from_locale=ko)
 + [devtool option](http://webpack.github.io/docs/configuration.html#devtool)
-
-__[Next Step](./STEP9.md)__

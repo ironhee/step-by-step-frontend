@@ -1,5 +1,5 @@
-Step4: Use ES6 syntax by Babel
----
+## Step4: Use ES6 syntax by Babel
+
 1. Install babel-loader by npm
 
   ```bash
@@ -72,10 +72,8 @@ Step4: Use ES6 syntax by Babel
   node test.js  # [0] hello world! ...
   ```
 
-Related links
----
+### Related links
+
 + [es6features](https://github.com/lukehoban/es6features)
 + [babel](https://github.com/babel/babel)
 + [webpack loader](http://webpack.github.io/docs/using-loaders.html)
-
-__[Next Step](./STEP5.md)__

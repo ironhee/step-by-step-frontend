@@ -1,5 +1,5 @@
-Step3: Make my package browser-executable by Webpack
----
+## Step3: Make my package browser-executable by Webpack
+
 1. Install & Initailize bower package.
 
   ```bash
@@ -103,10 +103,8 @@ Step3: Make my package browser-executable by Webpack
   node test.js  # [0] hello world! ...
   ```
 
-Related links
----
+### Related links
+
 + [bower](https://github.com/bower/bower)
 + [webpack](https://github.com/webpack/webpack)
 + [webpack config](http://webpack.github.io/docs/configuration.html)
-
-__[Next Step](./STEP4.md)__

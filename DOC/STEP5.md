@@ -1,5 +1,5 @@
-Step5: Use React
----
+## Step5: Use React
+
 1. Install React by npm
 
   ```bash
@@ -149,8 +149,6 @@ Step5: Use React
   ```
 
 
-Related links
----
-+ [react](https://github.com/facebook/react)
+### Related links
 
-__[Next Step](./STEP6.md)__
++ [react](https://github.com/facebook/react)

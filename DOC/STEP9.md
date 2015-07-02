@@ -1,5 +1,5 @@
-Step9: Create Simple app with Reflux & React
----
+## Step9: Create Simple app with Reflux & React
+
 1. add resolve.modulesDirectories option to webpack config for convenience
 
   webpack.base.config
@@ -331,8 +331,8 @@ Step9: Create Simple app with Reflux & React
 
 12. open demo.index.html in browser and check components are correctly operated
 
-Related links
----
+### Related links
+
 + [modulesDirectories option](http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories)
 + [promise](http://www.html5rocks.com/ko/tutorials/es6/promises/)
 + [q](http://documentup.com/kriskowal/q/)
@@ -342,5 +342,3 @@ Related links
 + [underscore-db](https://github.com/typicode/underscore-db)
 + [reflux-todo](https://github.com/spoike/refluxjs-todo)
 + [Cannot resolve module 'fs'](https://github.com/webpack/jade-loader/issues/8)
-
-__[Next Step](./STEP10.md)__

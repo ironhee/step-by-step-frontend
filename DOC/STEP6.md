@@ -1,5 +1,5 @@
-Step6: Use Style Guide by ESLint
----
+## Step6: Use Style Guide by ESLint
+
 1. Install eslint and plugins by npm
 
   ```bash
@@ -208,12 +208,10 @@ Step6: Use Style Guide by ESLint
   - sublime text: Install SublimeLinter & SublimeLinter-eslint
   - atom: Install linter & linter-eslint
 
-Related links
----
+### Related links
+
 + [airbnb javascript style guide](https://github.com/airbnb/javascript)
 + [eslint](http://eslint.org/)
 + [eslint config](http://eslint.org/docs/user-guide/configuring.html)
 + [atom](https://atom.io/)
 + [sublimt text](http://www.sublimetext.com/)
-
-__[Next Step](./STEP7.md)__

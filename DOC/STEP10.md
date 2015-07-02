@@ -1,5 +1,5 @@
-STEP10: Make your app sync with REST API server with json-server & jquery
----
+## STEP10: Make your app sync with REST API server with json-server & jquery
+
 1. Install json-server globally by npm
 
   ```bash
@@ -406,8 +406,8 @@ STEP10: Make your app sync with REST API server with json-server & jquery
   db.json
   ```
 
-Related links
----
+### Related links
+
 + [url-join](https://github.com/jfromaniello/url-join)
 + [json-server](https://github.com/typicode/json-server)
 + [jquery](https://github.com/jquery/jquery)

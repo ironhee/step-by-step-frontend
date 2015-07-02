@@ -1,5 +1,5 @@
-Step1: Initialize node package
----
+## Step1: Initialize node package
+
 1. Initailize node package.
 
   ```bash
@@ -43,11 +43,9 @@ Step1: Initialize node package
   node test.js  # hello world!
   ```
 
-Related links
----
+### Related links
+
 + [strict mode ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 + [npm init](https://docs.npmjs.com/cli/init)
 + [package.json](https://docs.npmjs.com/files/package.json)
 + [modules](https://nodejs.org/api/modules.html)
-
-__[Next Step](./STEP2.md)__
